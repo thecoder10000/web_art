@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Query_publisher">
+
+    <ListView
+        android:id="@+id/listView_publisher"
+        android:layout_width="match_parent"
+        android:layout_height="567dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/textView_publisher"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="#E7FFCB"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="검색하려는 책 출판사를 입력하세요"
+        android:textColor="#45A3ED"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_publisher">
+
+        <EditText
+            android:id="@+id/etTitle_publisher"
+            android:layout_width="290dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:hint="출판사" />
+
+        <Button
+            android:id="@+id/button_publisher"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="onClick"
+            android:text="검색"
+            android:textSize="16sp"
+            app:backgroundTint="#B69BE8" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_publisher2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:onClick="onClick"
+        android:text="돌아가기"
+        android:textSize="16sp"
+        app:backgroundTint="#B69BE8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listView_publisher" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

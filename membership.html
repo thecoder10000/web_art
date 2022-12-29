@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>회원가입하기</title>
+	<script>
+	n=0;
+	function checkpwd() {
+		
+		if(document.joinfrm.psw.value==document.joinfrm.pswconfirm.value){
+			
+			alert('비밀번호가 일치합니다.');
+			
+			if(n==0)
+				n++;
+		}
+		else if(document.joinfrm.psw.value!=document.joinfrm.pswconfirm.value){
+			document.joinfrm.psw.value="";
+			document.joinfrm.pswconfirm.value="";
+			alert('비밀번호가 일치하지 않습니다.');
+		}
+	}
+	
+	
+	
+	var missinglist=[];
+	var missing;
+	function totalCheck() {
+	
+		var a=document.joinfrm.name.value;
+		var b=document.joinfrm.ID.value;
+		var c=document.joinfrm.psw.value;
+		var d=document.joinfrm.pswconfirm.value;
+		
+		if(a!=""&&b!=""&&c!=""&&d!=""&&n==1) {
+			return true;
+		}
+		else {
+			
+			missinglist.length=0;
+
+			
+			if(a==""){
+				missinglist.push('이름');
+			}
+			if(b==""){
+				missinglist.push('아이디');
+			}
+			if(c==""){
+				missinglist.push('비밀번호');
+			}
+			if(d==""){
+				missinglist.push('비밀번호확인');
+			}
+			
+			if(n==0){
+				missinglist.push('비밀번호 확인검사');
+			}
+			
+			alert(missinglist.join(', ')+'\n'+'을(를) 입력 또는 실행해주세요');
+			
+			return false;
+		
+		}
+	
+	}
+	</script>
+</head>
+<body>
+<center>
+<h1 style="color:purple; font-family:경기천년제목 BOLD">회원가입하기</h1>
+<table width="700px" height="500px" align="center" cellpadding="1" style="background:linear-gradient(pink,#B5B2FF)";>
+   <form name="joinfrm" method="post" action="membership.jsp" target="memb">
+   
+   <tr>
+		<th align="center" style="color:white;">이름</th>
+		<td style="border-collapse:collapse;">
+			&nbsp;<input type="text" name="name" size="20">
+		</td>
+	</tr>
+   
+	<tr>
+		<th align="center" style="color:white;">아이디</th>
+		<td>
+			&nbsp;<input type="text" name="ID" size="20">
+		</td>
+	</tr>
+
+	<tr>
+		<th align="center" style="color:white;">비밀번호</th>
+		<td>
+			&nbsp;<input type="password" name="psw" size="20">
+			&nbsp;
+			비밀번호확인&nbsp;
+			<input type="password" name="pswconfirm" size="20">&nbsp;
+			<input type="button" onclick="checkpwd()" value="비밀번호 확인검사">
+		</td>
+	</tr>
+
+	<tr>
+		<th align="center">주소</th>
+		<td>
+			<input type="hidden" size="50" name="secretaddress" value="address">
+			&nbsp;&nbsp;
+			<button type="button" onclick="alert('주소찾기완료!')" value="주소찾기">주소찾기</button>
+		</td>
+	</tr>
+
+
+	<tr>
+		<th align="center">전화번호</th>
+		<td>
+			&nbsp;&nbsp;<input type="text" list="majorlist" name="home1" size="3" maxlength="3">
+			<datalist id="majorlist">
+				<option value="02">서울</option>
+				<option value="031">경기</option>
+				<option value="032">인천</option>
+				<option value="033">강원</option>
+				<option value="041">충남</option>
+				<option value="042">대전</option>
+				<option value="043">충북</option>
+				<option value="044">세종</option>
+				<option value="051">부산</option>
+				<option value="052(2)">울산</option>
+				<option value="053">대구</option>
+				<option value="054">경북</option>
+				<option value="055">경남</option>
+				<option value="061">전남</option>
+				<option value="062">광주</option>
+				<option value="063">전북</option>
+				<option value="064(7)">제주</option>
+			</datalist>
+			</select>
+			&nbsp;-&nbsp;
+			<input type="text" name="home2" maxlength="4" size="5">
+			&nbsp;-&nbsp;&nbsp;
+			<input type="text" name="home3" maxlength="4" size="5">
+		</td>
+	</tr>
+
+	<tr>
+		<th align="center">전화번호</th>
+		<td>
+			&nbsp;
+			<select name="phone1" size="1" >
+				<option value="010">010</option>
+				<option value="011">011</option>
+				<option value="016">016</option>
+				<option value="017">017</option>
+				<option value="018">018</option>
+				<option value="019">019</option>
+			</select>
+			&nbsp;&nbsp;-&nbsp;&nbsp;
+			<input type="text" name="phone2" size="5" maxlength="4">
+			&nbsp;&nbsp;-&nbsp;&nbsp;
+			<input type="text" name="phone3" size="5" maxlength="4">
+		</td>
+	</tr>
+	
+	<tr>
+		<th align="center">자기소개</th>
+		<td> &nbsp; <textarea name="member" cols="50" rows="6" placeholder="여기에 회원소개를 해주세요."></textarea> </td>
+	</tr>
+	
+	<tr>
+		<th align="center">생년월일</th>
+		<td>
+		&nbsp;
+			<input type="date" name="birthday" size="8" value="2000-04-29" min="1900-01-01" max="2019-01-01">
+			<input type="radio" name="birth" value="solarcalendar" checked>양력
+			<input type="radio" name="birth" value="lunarcalender">음력
+		</td>
+	</tr>
+
+
+	<tr>
+		<td colspan="2" align="center">
+			<button type="button" onClick="javascript:if(totalCheck()==true)submit()">가입하기</button>
+			<input type="reset" value="재입력">
+		</td>
+	</tr>
+  </form>
+</table>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	.move {
+		border: plum 2px solid;
+		padding: 2px;
+		height: 30px;
+		width: 120px;
+		animation: boxmove 2s linear infinite alternate;
+		transition: background 1s;
+	}
+	
+	.move:hover{
+		background: lavender;
+	}
+	
+	 @keyframes boxmove {
+			from { margin-left: -100px; }
+			to { margin-left: 100px; }
+		}
+	</style>
+</head>
+<body>
+    <center>
+		<form name="logForm" action="login.jsp" method="post" target="here" >
+				<p> 아이디 &nbsp;&nbsp;<input type="text" name="id_" placeholder="ID"></p>
+				<p>비밀번호 <input type="password" name="psw_" placeholder="password"></p>
+				
+				<input class="butto" type="button" value="로그인" onClick="submit()">
+				<input type="reset" value="다시작성">
+			
+		
+				<p>회원이 아니면?</p>
+				
+				<div class="move"><button type="button" onClick="javascript:window.open('member.html','')">회원가입하기</button></div>	
+	    </form>
+    </center>
+</body>
+</html>

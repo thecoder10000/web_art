@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	div {
+		border-image: linear-gradient(to right, red, orange, gold, green);
+		border-style: solid;
+		border-width: 3px;
+		border-image-slice: 1;
+		height: 70px;
+		width: 290px;
+		transition: background 2s, transform 1s;
+		position: relative;
+		left: -5px;
+	}
+	p {
+		color: gold;
+		font-size: 15pt;
+	}
+	div:hover {
+		background: plum;
+		transform: rotate(15deg);
+	}
+	</style>
+</head>
+<body>
+<center>
+<br><br>
+	<div onClick="window.open('artist.html','_blank')">
+	<p>artist</p>
+	</div><br>
+	<div onClick="window.open('artwork.html','_blank')">
+	<p>artwork</p>
+	</div><br>
+	<div onClick="window.open('news.html','right')">
+	<p >news</p>
+	</div><br>
+	<div onClick="window.open('about.html','right')">
+	<p>about</p>
+	</div><br>
+</center>
+</body>
+</html>

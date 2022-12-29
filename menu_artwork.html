@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-3.2.1.min.js">></script>
+	<script>
+	var p0, p1, p2, p3, p4;
+	function page(p0, p1, p2, p3, p4) {
+		window.open(p0,"middle");
+		window.open(p1,"middle1");
+		window.open(p2,"middle2");
+		window.open(p3,"middle3");
+		window.open(p4,"right_down_artwork");
+	}
+	</script>
+	<style>
+	div {
+		color: lightgreen;
+		border: lightgreen 2px solid;
+		padding: 20px;
+		transition: background-color 2s;
+	}
+	div:hover {
+		background-color: plum;
+	}
+	</style>
+</head>
+<body>
+<center>
+	<br>
+	<div onClick="page('vinci.html', 'box.html', 'vinci.html', 'degas.html', 'artwork/_vinci.html')">다빈치</div><br>
+	
+	<div onClick="page('degas.html', 'vinci.html', 'degas.html', 'rubens.html', 'artwork/_degas.html')">드가</div><br>
+	
+	<div onClick="page('rubens.html', 'degas.html', 'rubens.html', 'rembrandt.html', 'artwork/_rubens.html')">루벤스</div><br>
+	
+	<div onClick="page('rembrandt.html', 'rubens.html', 'rembrandt.html', 'renoir.html', 'artwork/_rembrandt.html')">렘브란트</div><br>
+	
+	<div onClick="page('renoir.html', 'rembrandt.html', 'renoir.html', 'manet.html', 'artwork/_renoir.html')">르누아르</div><br>
+	
+	<div onClick="page('manet.html', 'renoir.html', 'manet.html', 'monet.html', 'artwork/_manet.html')">마네</div><br>
+	
+	<div onClick="page('monet.html', 'manet.html', 'monet.html', 'michel.html', 'artwork/_monet.html')">모네</div><br>
+	
+	<div onClick="page('michel.html', 'monet.html', 'michel.html', 'vangogh.html', 'artwork/_michel.html')">미켈란젤로</div><br>
+	
+	<div onClick="page('vangogh.html', 'michel.html', 'vangogh.html', 'kahlo.html', 'artwork/_vangogh.html')">반고흐</div><br>
+	
+	<div onClick="page('kahlo.html', 'vangogh.html', 'kahlo.html', 'picasso.html', 'artwork/_kahlo.html')">칼로</div><br>
+	
+	<div onClick="page('picasso.html', 'kahlo.html', 'picasso.html', 'box.html', 'artwork/_picasso.html')">피카소</div><br>
+</center>
+</body>
+</html>

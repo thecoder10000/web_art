@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Art enriches our lives</title>
+	<script src="jquery-3.2.1.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		
+		$('.login').click(function() {
+			$('.loginmain').slideToggle('fast');
+		});
+		$('.menu').click(function() {
+			$('.menubox').slideToggle('fast');
+		});
+	});
+	</script>
+	<style>
+	.lbox {
+		position:absolute;
+		top:120px;
+		right:50px;
+		border: skyblue solid 2px;
+	}
+	
+	div.login {
+		color: skyblue;
+		font-size: 12pt;
+		text-align:center;
+		width:300px;
+		height:70px;
+		padding-top: 20px;
+	}
+	div.loginmain{
+		display:none;
+		width:300px;
+	}
+	.mbox {
+		position:absolute;
+		top:120px;
+		left:50px;
+	}
+	.menu {
+		color: gold;
+		font-size: 12pt;
+		text-align:center;
+		border-image: linear-gradient(to right, red, orange, gold, green);
+		border-style: solid;
+		border-width: 3px;
+		border-image-slice: 1;
+		height: 70px;
+		width: 300px;
+		padding-top: 20px;
+	}
+	.menubox {
+		display:none;
+		width:320px;
+		height:600px;
+	}
+	</style>
+</head>
+<body>
+<div>
+<iframe src="top.html" width="100%" height="80px" frameborder="0" scrolling="no" name="top"></iframe>
+</div>
+<div>
+<iframe src="main.html" width="100%" height="800px" frameborder="0" scrolling="no" name="right"></iframe>
+</div>
+<div class="mbox">
+<div class="menu"><p>click here for menu</p></div>
+<iframe class="menubox" src="menu.html"  frameborder="0" scrolling="no" name="left"></iframe>
+</div>
+<div class="lbox">
+<div class="login"><p>click here to login</p></div>
+<div class="loginmain"><iframe id="butto" src="login_.html" frameborder="0" height="300px" name="here"></iframe></div>
+</div>
+</body>
+</html>
